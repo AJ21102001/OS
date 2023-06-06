@@ -1,0 +1,22 @@
+For Executing The Encrypted File System using FUSE (EncFS) We Need Following To Be Executed.......
+
+
+$ sudo apt-get install encfs
+
+$ encfs ~/encryptdir/ ~/decryptdir/
+
+$ ls ~/encryptdir
+$ ls ~/decryptdir
+$ touch ~/decryptdir/file
+$ ls ~/decryptdir
+file
+$ ls ~/encryptdir
+wZ8fQPHUR4mtUdI4Tx0RWIcJ
+$ rm ~/decryptdir/file
+
+$ mv .ssh/ ~/decryptdir/
+$ ln -s ~/decryptdir/.ssh/ .ssh
+
+fusermount -u ~/decryptdir
+
+encfs ~/encryptdir/ ~/decryptdir/
